@@ -20,6 +20,7 @@ public class MainTest {
 	public void testUniritterContatoValidacaoError() throws Exception {
 		FirefoxDriver driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.get("http://www.uniritter.com.br/");
 		assertNotNull(driver);
 		//ContatoPagina.irPara(uniritterContexto);
 		//ContatoPagina.enviarContato();
