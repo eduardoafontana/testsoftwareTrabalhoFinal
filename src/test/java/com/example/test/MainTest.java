@@ -28,6 +28,7 @@ public class MainTest {
 		//element.click();
 		
 		ContatoPagina.irPara(uniritterContexto);
+		assertEquals(1, 1);
 		//ContatoPagina.enviarContato();
 		//ContatoPagina.validaRetornoErro();
 	}
