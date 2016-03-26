@@ -23,9 +23,9 @@ public class ContatoPagina {
 		contexto = pContext;
 
 		contexto.driver.get(contexto.baseUrl);
-		contexto.driver.findElement(By.cssSelector("a[title=\"Fale Consoco\"]")).click();
+		//contexto.driver.findElement(By.cssSelector("a[title=\"Fale Consoco\"]")).click();
 
-		mapearElementos();
+		//mapearElementos();
 	}
 
 	private static void mapearElementos() {
