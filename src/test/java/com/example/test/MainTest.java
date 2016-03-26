@@ -10,24 +10,24 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class MainTest {
 
-	//public UniritterContexto uniritterContexto;
+	public UniritterContexto uniritterContexto;
 	
-//	@Before
-//	public void setUp() throws Exception {
-//		uniritterContexto = new UniritterContexto(new FirefoxDriver());
-//	}
+	@Before
+	public void setUp() throws Exception {
+		uniritterContexto = new UniritterContexto(new FirefoxDriver());
+	}
 
 	@Test
 	public void testUniritterContatoValidacaoError() throws Exception {
-		FirefoxDriver driver = new FirefoxDriver();
-		assertNotNull(driver);
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		driver.get("http://www.uniritter.com.br/");
-		WebElement element = driver.findElement(By.cssSelector("a[title=\"Fale Consoco\"]"));
-		assertNotNull(element);
-		element.click();
+		//FirefoxDriver driver = new FirefoxDriver();
+		//assertNotNull(driver);
+		//driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		//driver.get("http://www.uniritter.com.br/");
+		//WebElement element = driver.findElement(By.cssSelector("a[title=\"Fale Consoco\"]"));
+		//assertNotNull(element);
+		//element.click();
 		
-		//ContatoPagina.irPara(uniritterContexto);
+		ContatoPagina.irPara(uniritterContexto);
 		//ContatoPagina.enviarContato();
 		//ContatoPagina.validaRetornoErro();
 	}
@@ -48,8 +48,8 @@ public class MainTest {
 ////		ContatoPagina.validaRetornoErroParcial();
 //	}
 
-//	@After
-//	public void tearDown() throws Exception {
-//		uniritterContexto.quit();
-//	}
+	@After
+	public void tearDown() throws Exception {
+		uniritterContexto.quit();
+	}
 }
