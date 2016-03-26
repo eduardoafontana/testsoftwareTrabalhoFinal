@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class MainTest {
@@ -19,9 +20,13 @@ public class MainTest {
 	@Test
 	public void testUniritterContatoValidacaoError() throws Exception {
 		FirefoxDriver driver = new FirefoxDriver();
+		assertNotNull(driver);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.get("http://www.uniritter.com.br/");
-		assertNotNull(driver);
+		WebElement element = driver.findElement(By.cssSelector("a[title=\"Fale Consoco\"]"));
+		assertNotNull(element);
+		element.click();
+		
 		//ContatoPagina.irPara(uniritterContexto);
 		//ContatoPagina.enviarContato();
 		//ContatoPagina.validaRetornoErro();
