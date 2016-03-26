@@ -3,6 +3,8 @@ package com.example.test;
 import org.junit.*;
 import static org.junit.Assert.*;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class MainTest {
@@ -17,6 +19,7 @@ public class MainTest {
 	@Test
 	public void testUniritterContatoValidacaoError() throws Exception {
 		FirefoxDriver driver = new FirefoxDriver();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		assertNotNull(driver);
 		//ContatoPagina.irPara(uniritterContexto);
 		//ContatoPagina.enviarContato();
