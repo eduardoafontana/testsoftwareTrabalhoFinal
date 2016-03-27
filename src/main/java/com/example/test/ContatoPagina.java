@@ -28,10 +28,10 @@ public class ContatoPagina {
 		contexto = pContext;
 
 		contexto.driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		contexto.driver.get(contexto.baseUrl);
+		//contexto.driver.get(contexto.baseUrl);
 		
-		WebDriverWait wait = new WebDriverWait(contexto.driver, 10);
-		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[title=\"Fale Consoco\"]")));
+		//WebDriverWait wait = new WebDriverWait(contexto.driver, 10);
+		//WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[title=\"Fale Consoco\"]")));
 		
 		//element.click();
 
