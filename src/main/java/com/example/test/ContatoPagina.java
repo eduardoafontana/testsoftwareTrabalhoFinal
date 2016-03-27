@@ -24,7 +24,7 @@ public class ContatoPagina {
 //	private static WebElement campoMensagem;
 //	private static WebElement labelDeMensagemDeSucesso;
 
-	public static void irPara(UniritterContexto pContext) {
+	public static void irPara2(UniritterContexto pContext) {
 		contexto = pContext;
 
 		contexto.driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
