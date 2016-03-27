@@ -6,8 +6,8 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-//import org.openqa.selenium.support.ui.ExpectedConditions;
-//import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class ContatoPagina {
@@ -30,7 +30,10 @@ public class ContatoPagina {
 		contexto.driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		contexto.driver.get(contexto.baseUrl);
 		
-		contexto.driver.findElement(By.cssSelector("a[title=\"Fale Consoco\"]")).click();
+		WebDriverWait wait = new WebDriverWait(contexto.driver, 30);
+		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[title=\"Fale Consoco\"]")));
+		
+		element.click();
 	}
 
 
