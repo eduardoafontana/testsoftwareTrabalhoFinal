@@ -13,8 +13,6 @@ public class UniritterContexto {
 	public UniritterContexto(FirefoxDriver driver) {
 	    this.driver = driver;
 	    baseUrl = "http://www.uniritter.com.br/";
-	    
-	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 	
 	public void quit(){

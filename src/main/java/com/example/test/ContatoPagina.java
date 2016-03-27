@@ -2,6 +2,8 @@ package com.example.test;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -22,6 +24,7 @@ public class ContatoPagina {
 	public static void irPara(UniritterContexto pContext) {
 		contexto = pContext;
 
+		contexto.driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		contexto.driver.get(contexto.baseUrl);
 		contexto.driver.findElement(By.cssSelector("a[title=\"Fale Consoco\"]")).click();
 
