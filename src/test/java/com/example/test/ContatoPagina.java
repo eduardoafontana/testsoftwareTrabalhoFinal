@@ -29,6 +29,8 @@ public class ContatoPagina {
 
 		contexto.driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		contexto.driver.get(contexto.baseUrl);
+		
+		contexto.driver.findElement(By.cssSelector("a[title=\"Fale Consoco\"]")).click();
 	}
 
 
