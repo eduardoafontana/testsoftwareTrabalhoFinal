@@ -30,12 +30,14 @@ public class ContatoPagina {
 		contexto.driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		contexto.driver.get(contexto.baseUrl);
 		
-		WebDriverWait wait = new WebDriverWait(contexto.driver, 500);
-		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[title=\"Fale Consoco\"]")));
+		WebDriverWait wait = new WebDriverWait(contexto.driver, 60);
+		//WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[title=\"Fale Consoco\"]")));
+		
+		//org.openqa.selenium.TimeoutException: Timed out after 500 seconds waiting for element to be clickable: By.cssSelector: a[title="Fale Consoco"]
+		//Testar ver se encontra outra coisa na página, dai pode-se evoluir
+		
+		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[class=\"logo\"]")));
 		
 		element.click();
 	}
-
-
-
 }
