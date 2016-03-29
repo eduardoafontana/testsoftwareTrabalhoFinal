@@ -54,5 +54,28 @@ public class ContatoPagina {
 		labelDeRetornoDeErroDoEmail = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//form[@id='SacAddForm']/div[5]/label")));
 		labelDeRetornoDeErroDoTelefone = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//form[@id='SacAddForm']/div[6]/label")));
 		labelDeRetornoDeErroDoMensagem = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//form[@id='SacAddForm']/div[7]/label")));
+	}
+
+	public static void validaRetornoErro() {
+		assertEquals("Informe o seu nome", ContatoPagina.getNameError());
+		assertEquals("Informe o seu e-mail", ContatoPagina.getEmailError());
+		assertEquals("Informe o seu telefone", ContatoPagina.getTelefoneError());
+		assertEquals("Informe o sua mensagem", ContatoPagina.getMensagemError());
+	}
+
+	public static String getNameError() {
+		return labelDeRetornoDeErroDoName.getText();
+	}
+	
+	public static String getEmailError() {
+		return labelDeRetornoDeErroDoEmail.getText();
+	}
+
+	public static String getTelefoneError() {
+		return labelDeRetornoDeErroDoTelefone.getText();
+	}
+
+	public static String getMensagemError() {
+		return labelDeRetornoDeErroDoMensagem.getText();
 	}	
 }

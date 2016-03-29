@@ -21,7 +21,7 @@ public class MainTest {
 	public void testUniritterContatoValidacaoError() throws Exception {
 		ContatoPagina.irPara(uniritterContexto);
 		ContatoPagina.enviarContato();
-//		ContatoPagina.validaRetornoErro();
+		ContatoPagina.validaRetornoErro();
 	}
 
 //	@Test
