@@ -1,4 +1,4 @@
-﻿﻿package com.example.test;
+﻿package com.example.test;
 
 import org.junit.*;
 import static org.junit.Assert.*;
