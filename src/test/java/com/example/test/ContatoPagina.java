@@ -102,5 +102,20 @@ public class ContatoPagina {
 	
 	public static void validaRetornoSucesso() {
 		assertEquals("Contato realizado com sucesso.", labelDeMensagemDeSucesso.getText());
+	}
+
+	public static void preencherParcialmenteCamposFormulario() {
+		campoNome.clear();
+		campoNome.sendKeys("as");
+		campoEmail.clear();
+		campoEmail.sendKeys("ss@com.br");
+		campoTelefone.clear();
+		campoTelefone.sendKeys("(45) 5454-5");
+		campoMensagem.clear();
+		campoMensagem.sendKeys("sf");
+	}
+	
+	public static void validaRetornoErroParcial() {
+		assertEquals("O contato não pode ser salvo. Tente novamente.", labelDeMensagemDeSucesso.getText());
 	}	
 }

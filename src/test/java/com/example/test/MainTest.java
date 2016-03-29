@@ -31,14 +31,14 @@ public class MainTest {
 		 ContatoPagina.enviarContatoPreenchido();
 		 ContatoPagina.validaRetornoSucesso();
 	}
-//
-//	@Test
-//	public void testUniritterContatoValidacaoParcial() throws Exception {
-//		ContatoPagina.irPara(uniritterContexto);
-//		ContatoPagina.preencherParcialmenteCamposFormulario();
-//		ContatoPagina.enviarContatoPreenchido();
-//		ContatoPagina.validaRetornoErroParcial();
-//	}
+
+	@Test
+	public void testUniritterContatoValidacaoParcial() throws Exception {
+		ContatoPagina.irPara(uniritterContexto);
+		ContatoPagina.preencherParcialmenteCamposFormulario();
+		ContatoPagina.enviarContatoPreenchido();
+		ContatoPagina.validaRetornoErroParcial();
+	}
 
 	@After
 	public void tearDown() throws Exception {
