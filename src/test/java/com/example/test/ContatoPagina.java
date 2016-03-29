@@ -38,12 +38,21 @@ public class ContatoPagina {
 	private static void mapearElementos() {
 		botaoDeEnviarDoFormulario = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.pull-left")));
 		campoNome = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("SacNome")));
-		
-		//botaoDeEnviarDoFormulario = contexto.driver.findElement(By.cssSelector("button.pull-left"));
-		//campoNome = contexto.driver.findElement(By.id("SacNome"));
-		
-//		campoEmail = contexto.driver.findElement(By.id("SacEmail"));
-//		campoTelefone = contexto.driver.findElement(By.id("SacTelefone"));
-//		campoMensagem = contexto.driver.findElement(By.id("SacMensagem"));
+		campoEmail = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("SacEmail")));
+		campoTelefone = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("SacTelefone")));
+		campoMensagem = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("SacMensagem")));
 	}
+	
+	public static void enviarContato() {
+		botaoDeEnviarDoFormulario.click();
+
+		mapearElementosRetornoValidacaoErro();
+	}
+
+	private static void mapearElementosRetornoValidacaoErro() {
+		labelDeRetornoDeErroDoName = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("label.error")));
+		labelDeRetornoDeErroDoEmail = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//form[@id='SacAddForm']/div[5]/label")));
+		labelDeRetornoDeErroDoTelefone = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//form[@id='SacAddForm']/div[6]/label")));
+		labelDeRetornoDeErroDoMensagem = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//form[@id='SacAddForm']/div[7]/label")));
+	}	
 }
