@@ -1,4 +1,4 @@
-package com.example.test;
+﻿package com.example.test;
 
 import static org.junit.Assert.assertEquals;
 
@@ -116,6 +116,6 @@ public class ContatoPagina {
 	}
 	
 	public static void validaRetornoErroParcial() {
-		assertEquals("O contato n�o pode ser salvo. Tente novamente.", labelDeMensagemDeSucesso.getText());
+		assertEquals("O contato não pode ser salvo. Tente novamente.", labelDeMensagemDeSucesso.getText());
 	}	
 }
