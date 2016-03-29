@@ -24,11 +24,11 @@ public class ContatoPagina {
 	private static WebElement campoMensagem;
 	private static WebElement labelDeMensagemDeSucesso;
 
-	public static void irPara2(UniritterContexto pContext) {
+	public static void irPara(UniritterContexto pContext) {
 		contexto = pContext;
 
 		contexto.driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		contexto.driver.get(contexto.baseUrl);
+		contexto.driver.get(contexto.baseUrl + "fale-conosco");
 		
 		WebDriverWait wait = new WebDriverWait(contexto.driver, 60);
 		//WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[title=\"Fale Consoco\"]")));
