@@ -24,13 +24,13 @@ public class MainTest {
 		ContatoPagina.validaRetornoErro();
 	}
 
-//	@Test
-//	public void testUniritterContatoValidacaoSucesso() throws Exception {
-//		 ContatoPagina.irPara(uniritterContexto);
-//		 ContatoPagina.preencherCamposFormulario();
-//		 ContatoPagina.enviarContatoPreenchido();
-//		 ContatoPagina.validaRetornoSucesso();
-//	}
+	@Test
+	public void testUniritterContatoValidacaoSucesso() throws Exception {
+		 ContatoPagina.irPara(uniritterContexto);
+		 ContatoPagina.preencherCamposFormulario();
+		 ContatoPagina.enviarContatoPreenchido();
+		 ContatoPagina.validaRetornoSucesso();
+	}
 //
 //	@Test
 //	public void testUniritterContatoValidacaoParcial() throws Exception {

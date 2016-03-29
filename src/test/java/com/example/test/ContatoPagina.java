@@ -77,5 +77,30 @@ public class ContatoPagina {
 
 	public static String getMensagemError() {
 		return labelDeRetornoDeErroDoMensagem.getText();
+	}
+
+	public static void preencherCamposFormulario() {
+		campoNome.clear();
+		campoNome.sendKeys("Andre");
+		campoEmail.clear();
+		campoEmail.sendKeys("andrefj@gmail.com");
+		campoTelefone.clear();
+		campoTelefone.sendKeys("(55) 9633-2211");
+		campoMensagem.clear();
+		campoMensagem.sendKeys("Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
+	}
+	
+	public static void enviarContatoPreenchido() {
+		contexto.driver.findElement(By.id("SacAddForm")).submit();
+		
+		mapearElementosRetornoValidacaoSucesso();
+	}
+
+	private static void mapearElementosRetornoValidacaoSucesso() {
+		labelDeMensagemDeSucesso = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("flashMessage")));
+	}
+	
+	public static void validaRetornoSucesso() {
+		assertEquals("Contato realizado com sucesso.", labelDeMensagemDeSucesso.getText());
 	}	
 }
