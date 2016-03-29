@@ -115,7 +115,5 @@ public class ContatoPagina {
 		campoMensagem.sendKeys("sf");
 	}
 	
-	public static void validaRetornoErroParcial() {
-		assertEquals("O contato não pode ser salvo. Tente novamente.", labelDeMensagemDeSucesso.getText());
-	}	
+
 }
