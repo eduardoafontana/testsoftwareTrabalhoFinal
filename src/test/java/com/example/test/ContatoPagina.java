@@ -118,4 +118,6 @@ public class ContatoPagina {
 	public static void validaRetornoErroParcial() {
  		assertEquals("O contato não pode ser salvo. Tente novamente.", labelDeMensagemDeSucesso.getText());
 	}
+	
+	//Adicionado comentário com acentuação
 }

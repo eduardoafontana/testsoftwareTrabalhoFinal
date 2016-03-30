@@ -44,4 +44,6 @@ public class MainTest {
 	public void tearDown() throws Exception {
 		uniritterContexto.quit();
 	}
+	
+	//Adicionado comentário com acentuação
 }
