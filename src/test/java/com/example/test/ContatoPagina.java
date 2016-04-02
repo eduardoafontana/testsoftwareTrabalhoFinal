@@ -2,6 +2,8 @@ package com.example.test;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.List;
+import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -80,13 +82,11 @@ public class ContatoPagina {
 	}
 
 	public static void preencherCamposFormulario() {
-		campoNome.clear();
+		limparCampos(Arrays.asList(campoNome, campoEmail, campoTelefone, campoMensagem));
+		
 		campoNome.sendKeys("Andre");
-		campoEmail.clear();
 		campoEmail.sendKeys("andrefj@gmail.com");
-		campoTelefone.clear();
 		campoTelefone.sendKeys("(55) 9633-2211");
-		campoMensagem.clear();
 		campoMensagem.sendKeys("Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
 	}
 	
@@ -105,19 +105,21 @@ public class ContatoPagina {
 	}
 
 	public static void preencherParcialmenteCamposFormulario() {
-		campoNome.clear();
-		campoNome.sendKeys("as");
-		campoEmail.clear();
-		campoEmail.sendKeys("ss@com.br");
-		campoTelefone.clear();
-		campoTelefone.sendKeys("(45) 5454-5");
-		campoMensagem.clear();
+		limparCampos(Arrays.asList(campoNome, campoEmail, campoTelefone, campoMensagem));
+				
+		campoNome.sendKeys("as");		
+		campoEmail.sendKeys("ss@com.br");		
+		campoTelefone.sendKeys("(45) 5454-5");		
 		campoMensagem.sendKeys("sf");
 	}
 
+	private static void limparCampos(List<WebElement> webElements){
+		for (WebElement webElement : webElements) {
+			webElement.clear();			
+		}
+	}
+	
 	public static void validaRetornoErroParcial() {
  		assertEquals("O contato não pode ser salvo. Tente novamente.", labelDeMensagemDeSucesso.getText());
 	}
-	
-	//Adicionado comentário com acentuação
 }
