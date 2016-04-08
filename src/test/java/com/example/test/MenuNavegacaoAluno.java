@@ -23,6 +23,7 @@ public class MenuNavegacaoAluno {
 
 		contexto.driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		contexto.driver.get(contexto.baseUrl);
+		contexto.driver.manage().window().maximize(); 
 
 		wait = new WebDriverWait(contexto.driver, 30);
 

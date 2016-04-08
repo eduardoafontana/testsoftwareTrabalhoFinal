@@ -65,19 +65,19 @@ public class ContatoPagina {
 		assertEquals("Informe o sua mensagem", ContatoPagina.getMensagemError());
 	}
 
-	public static String getNameError() {
+	private static String getNameError() {
 		return labelDeRetornoDeErroDoName.getText();
 	}
 	
-	public static String getEmailError() {
+	private static String getEmailError() {
 		return labelDeRetornoDeErroDoEmail.getText();
 	}
 
-	public static String getTelefoneError() {
+	private static String getTelefoneError() {
 		return labelDeRetornoDeErroDoTelefone.getText();
 	}
 
-	public static String getMensagemError() {
+	private static String getMensagemError() {
 		return labelDeRetornoDeErroDoMensagem.getText();
 	}
 
