@@ -26,10 +26,10 @@ public class MainTest {
 
 	@Test
 	public void testUniritterContatoValidacaoSucesso() throws Exception {
-		 ContatoPagina.irPara(uniritterContexto);
-		 ContatoPagina.preencherCamposFormulario();
-		 ContatoPagina.enviarContatoPreenchido();
-		 ContatoPagina.validaRetornoSucesso();
+		ContatoPagina.irPara(uniritterContexto);
+		ContatoPagina.preencherCamposFormulario();
+		ContatoPagina.enviarContatoPreenchido();
+		ContatoPagina.validaRetornoSucesso();
 	}
 
 	@Test
@@ -40,10 +40,16 @@ public class MainTest {
 		ContatoPagina.validaRetornoErroParcial();
 	}
 
+	@Test
+	public void testeUniritterMenuNavegacaoAluno() throws Exception {
+		MenuNavegacaoAluno.iniciar(uniritterContexto);
+		
+		MenuNavegacaoAluno.clicarCalendarioAcademico();
+		MenuNavegacaoAluno.estaEmCalendarioAcademico();
+	}
+
 	@After
 	public void tearDown() throws Exception {
 		uniritterContexto.quit();
 	}
-	
-	//Adicionado comentário com acentuação
 }
