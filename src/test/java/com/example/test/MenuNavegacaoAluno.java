@@ -31,7 +31,7 @@ public class MenuNavegacaoAluno {
 	}
 
 	private static void mapearElementosDoMenu() {
-		itemMenuCalendarioAcademico = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("body > div.row.footer > div > div.my-menu-footer.tur7 > div:nth-child(4) > ul > li:nth-child(3) > a")));
+		itemMenuCalendarioAcademico = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[href='http://www.uniritter.edu.br/calendario']")));
 	}
 	
 	public static void clicarCalendarioAcademico() {
