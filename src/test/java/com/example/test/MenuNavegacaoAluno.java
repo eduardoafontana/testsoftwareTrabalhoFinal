@@ -7,6 +7,8 @@ import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -22,8 +24,10 @@ public class MenuNavegacaoAluno {
 		contexto = pContext;
 
 		contexto.driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		contexto.driver.manage().window().setPosition(new Point(0, 0));
+		contexto.driver.manage().window().setSize(new Dimension(1920, 1080));		
 		contexto.driver.get(contexto.baseUrl);
-
+		
 		wait = new WebDriverWait(contexto.driver, 30);
 
 		mapearElementosDoMenu();

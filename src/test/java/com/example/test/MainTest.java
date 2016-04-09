@@ -17,28 +17,28 @@ public class MainTest {
 		uniritterContexto = new UniritterContexto(new FirefoxDriver());
 	}
 
-	@Test
-	public void testUniritterContatoValidacaoError() throws Exception {
-		ContatoPagina.irPara(uniritterContexto);
-		ContatoPagina.enviarContato();
-		ContatoPagina.validaRetornoErro();
-	}
-
-	@Test
-	public void testUniritterContatoValidacaoSucesso() throws Exception {
-		ContatoPagina.irPara(uniritterContexto);
-		ContatoPagina.preencherCamposFormulario();
-		ContatoPagina.enviarContatoPreenchido();
-		ContatoPagina.validaRetornoSucesso();
-	}
-
-	@Test
-	public void testUniritterContatoValidacaoParcial() throws Exception {
-		ContatoPagina.irPara(uniritterContexto);
-		ContatoPagina.preencherParcialmenteCamposFormulario();
-		ContatoPagina.enviarContatoPreenchido();
-		ContatoPagina.validaRetornoErroParcial();
-	}
+//	@Test
+//	public void testUniritterContatoValidacaoError() throws Exception {
+//		ContatoPagina.irPara(uniritterContexto);
+//		ContatoPagina.enviarContato();
+//		ContatoPagina.validaRetornoErro();
+//	}
+//
+//	@Test
+//	public void testUniritterContatoValidacaoSucesso() throws Exception {
+//		ContatoPagina.irPara(uniritterContexto);
+//		ContatoPagina.preencherCamposFormulario();
+//		ContatoPagina.enviarContatoPreenchido();
+//		ContatoPagina.validaRetornoSucesso();
+//	}
+//
+//	@Test
+//	public void testUniritterContatoValidacaoParcial() throws Exception {
+//		ContatoPagina.irPara(uniritterContexto);
+//		ContatoPagina.preencherParcialmenteCamposFormulario();
+//		ContatoPagina.enviarContatoPreenchido();
+//		ContatoPagina.validaRetornoErroParcial();
+//	}
 
 	@Test
 	public void testeUniritterMenuNavegacaoAluno() throws Exception {
