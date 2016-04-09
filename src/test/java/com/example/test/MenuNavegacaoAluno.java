@@ -40,7 +40,7 @@ public class MenuNavegacaoAluno {
 	public static void clicarCalendarioAcademico() {
 		itemMenuCalendarioAcademico.click();
 		
-		//mapearRetornoClickCalendarioAcademico();
+		mapearRetornoClickCalendarioAcademico();
 	}
 
 	private static void mapearRetornoClickCalendarioAcademico() {
