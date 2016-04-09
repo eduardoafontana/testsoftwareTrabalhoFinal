@@ -44,7 +44,7 @@ public class MainTest {
 	public void testeUniritterMenuNavegacaoAluno() throws Exception {
 		MenuNavegacaoAluno.iniciar(uniritterContexto);
 		
-		//MenuNavegacaoAluno.clicarCalendarioAcademico();
+		MenuNavegacaoAluno.clicarCalendarioAcademico();
 		//MenuNavegacaoAluno.estaEmCalendarioAcademico();
 	}
 
