@@ -16,6 +16,4 @@ public class UniritterContexto {
 	public void quit(){
 	    driver.quit();
 	}
-
-	//Adicionado comentário com acentuação
 }

@@ -23,7 +23,6 @@ public class MenuNavegacaoAluno {
 
 		contexto.driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		contexto.driver.get(contexto.baseUrl);
-		contexto.driver.manage().window().maximize(); 
 
 		wait = new WebDriverWait(contexto.driver, 30);
 
@@ -31,7 +30,7 @@ public class MenuNavegacaoAluno {
 	}
 
 	private static void mapearElementosDoMenu() {
-		itemMenuCalendarioAcademico = wait.until(ExpectedConditions.elementToBeClickable(By.linkText("CALENDÁRIO ACADÊMICO")));
+		itemMenuCalendarioAcademico = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("a[href='http://www.uniritter.edu.br/calendario']")));
 	}
 	
 	public static void clicarCalendarioAcademico() {
