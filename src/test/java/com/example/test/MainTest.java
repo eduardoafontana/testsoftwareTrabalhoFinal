@@ -39,15 +39,71 @@ public class MainTest {
 		ContatoPagina.enviarContatoPreenchido();
 		ContatoPagina.validaRetornoErroParcial();
 	}
-
+	
 	@Test
-	public void testeUniritterMenuNavegacaoAluno() throws Exception {
+	public void testeUniritterMenuNavegacaoAlunoRematricula() throws Exception {
+		MenuNavegacaoAluno.iniciar(uniritterContexto);
+		
+		MenuNavegacaoAluno.clicarRematricula();
+		MenuNavegacaoAluno.estaEmRematricula();
+	}
+	
+	@Test
+	public void testeUniritterMenuNavegacaoAlunoCalendarioAcademico() throws Exception {
 		MenuNavegacaoAluno.iniciar(uniritterContexto);
 		
 		MenuNavegacaoAluno.clicarCalendarioAcademico();
 		MenuNavegacaoAluno.estaEmCalendarioAcademico();
+	}	
+	
+	@Test
+	public void testeUniritterMenuNavegacaoAlunoAvaliacaoInstitucional() throws Exception {
+		MenuNavegacaoAluno.iniciar(uniritterContexto);
+		
+		MenuNavegacaoAluno.clicarAvaliacaoInstitucional();
+		MenuNavegacaoAluno.estaEmAvaliacaoInstitucional();
+	}
+	
+	@Test
+	public void testeUniritterMenuNavegacaoAlunoEnade() throws Exception {
+		MenuNavegacaoAluno.iniciar(uniritterContexto);
+		
+		MenuNavegacaoAluno.clicarEnade();
+		MenuNavegacaoAluno.estaEmEnade();
 	}
 
+	@Test
+	public void testeUniritterMenuNavegacaoAlunoBolsaEFinanciamentos() throws Exception {
+		MenuNavegacaoAluno.iniciar(uniritterContexto);
+		
+		MenuNavegacaoAluno.clicarBolsaEFinanciamentos();
+		MenuNavegacaoAluno.estaEmBolsaEFinanciamentos();
+	}
+
+	@Test
+	public void testeUniritterMenuNavegacaoAlunoNRA() throws Exception {
+		MenuNavegacaoAluno.iniciar(uniritterContexto);
+		
+		MenuNavegacaoAluno.clicarNRA();
+		MenuNavegacaoAluno.estaEmNRA();
+	}
+
+	@Test
+	public void testeUniritterMenuNavegacaoAlunoDCE() throws Exception {
+		MenuNavegacaoAluno.iniciar(uniritterContexto);
+		
+		MenuNavegacaoAluno.clicarDCE();
+		MenuNavegacaoAluno.estaEmDCE();
+	}
+	
+	@Test
+	public void testeUniritterMenuNavegacaoAlunoGuiaDeFormaturas() throws Exception {
+		MenuNavegacaoAluno.iniciar(uniritterContexto);
+		
+		MenuNavegacaoAluno.clicarGuiaDeFormaturas();
+		MenuNavegacaoAluno.estaEmGuiaDeFormaturas();
+	}	
+	
 	@After
 	public void tearDown() throws Exception {
 		uniritterContexto.quit();
