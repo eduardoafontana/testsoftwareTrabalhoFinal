@@ -24,25 +24,21 @@ public class ContatoPagina {
 	private static WebElement campoTelefone;
 	private static WebElement campoMensagem;
 	private static WebElement labelDeMensagemDeSucesso;
-	private static WebDriverWait wait;
 
 	public static void irPara(UniritterContexto pContext) {
 		contexto = pContext;
 
-		contexto.driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		contexto.driver.get(contexto.baseUrl + "fale-conosco");
-
-		wait = new WebDriverWait(contexto.driver, 30);
 
 		mapearElementos();
 	}
 
 	private static void mapearElementos() {
-		botaoDeEnviarDoFormulario = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.pull-left")));
-		campoNome = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("SacNome")));
-		campoEmail = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("SacEmail")));
-		campoTelefone = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("SacTelefone")));
-		campoMensagem = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("SacMensagem")));
+		botaoDeEnviarDoFormulario = contexto.wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.pull-left")));
+		campoNome = contexto.wait.until(ExpectedConditions.presenceOfElementLocated(By.id("SacNome")));
+		campoEmail = contexto.wait.until(ExpectedConditions.presenceOfElementLocated(By.id("SacEmail")));
+		campoTelefone = contexto.wait.until(ExpectedConditions.presenceOfElementLocated(By.id("SacTelefone")));
+		campoMensagem = contexto.wait.until(ExpectedConditions.presenceOfElementLocated(By.id("SacMensagem")));
 	}
 	
 	public static void enviarContato() {
@@ -52,10 +48,10 @@ public class ContatoPagina {
 	}
 
 	private static void mapearElementosRetornoValidacaoErro() {
-		labelDeRetornoDeErroDoName = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("label.error")));
-		labelDeRetornoDeErroDoEmail = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//form[@id='SacAddForm']/div[5]/label")));
-		labelDeRetornoDeErroDoTelefone = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//form[@id='SacAddForm']/div[6]/label")));
-		labelDeRetornoDeErroDoMensagem = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//form[@id='SacAddForm']/div[7]/label")));
+		labelDeRetornoDeErroDoName = contexto.wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("label.error")));
+		labelDeRetornoDeErroDoEmail = contexto.wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//form[@id='SacAddForm']/div[5]/label")));
+		labelDeRetornoDeErroDoTelefone = contexto.wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//form[@id='SacAddForm']/div[6]/label")));
+		labelDeRetornoDeErroDoMensagem = contexto.wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//form[@id='SacAddForm']/div[7]/label")));
 	}
 
 	public static void validaRetornoErro() {
@@ -82,7 +78,7 @@ public class ContatoPagina {
 	}
 
 	public static void preencherCamposFormulario() {
-		limparCampos(Arrays.asList(campoNome, campoEmail, campoTelefone, campoMensagem));
+		contexto.limparCampos(Arrays.asList(campoNome, campoEmail, campoTelefone, campoMensagem));
 		
 		campoNome.sendKeys("Andre");
 		campoEmail.sendKeys("andrefj@gmail.com");
@@ -97,7 +93,7 @@ public class ContatoPagina {
 	}
 
 	private static void mapearElementosRetornoValidacaoSucesso() {
-		labelDeMensagemDeSucesso = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("flashMessage")));
+		labelDeMensagemDeSucesso = contexto.wait.until(ExpectedConditions.presenceOfElementLocated(By.id("flashMessage")));
 	}
 	
 	public static void validaRetornoSucesso() {
@@ -105,18 +101,12 @@ public class ContatoPagina {
 	}
 
 	public static void preencherParcialmenteCamposFormulario() {
-		limparCampos(Arrays.asList(campoNome, campoEmail, campoTelefone, campoMensagem));
+		contexto.limparCampos(Arrays.asList(campoNome, campoEmail, campoTelefone, campoMensagem));
 				
 		campoNome.sendKeys("as");		
 		campoEmail.sendKeys("ss@com.br");		
 		campoTelefone.sendKeys("(45) 5454-5");		
 		campoMensagem.sendKeys("sf");
-	}
-
-	private static void limparCampos(List<WebElement> webElements){
-		for (WebElement webElement : webElements) {
-			webElement.clear();			
-		}
 	}
 	
 	public static void validaRetornoErroParcial() {

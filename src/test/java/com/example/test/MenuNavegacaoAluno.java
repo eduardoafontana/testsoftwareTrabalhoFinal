@@ -25,30 +25,24 @@ public class MenuNavegacaoAluno {
 	private static WebElement itemMenuDCE;
 	private static WebElement itemMenuGuiaDeFormaturas;
 	private static WebElement tituloPagina;
-	private static WebDriverWait wait;
 
 	public static void iniciar(UniritterContexto pContext) {
 		contexto = pContext;
 
-		contexto.driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		contexto.driver.manage().window().setPosition(new Point(0, 0));
-		contexto.driver.manage().window().setSize(new Dimension(1920, 1080));
 		contexto.driver.get(contexto.baseUrl);
-
-		wait = new WebDriverWait(contexto.driver, 30);
 
 		mapearElementosDoMenu();
 	}
 
 	private static void mapearElementosDoMenu() {
-		itemMenuRematricula = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("a[href='" + contexto.alternativeUrl + "rematricula']")));
-		itemMenuCalendarioAcademico = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("a[href='" + contexto.alternativeUrl + "calendario']")));
-		itemMenuAvaliacaoInstitucional = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("a[href='" + contexto.alternativeUrl + "avaliacao-institucional']")));		
-		itemMenuEnade = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("a[href='" + contexto.alternativeUrl + "enade']")));
-		itemMenuBolsaEFinanciamentos = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("a[href='" + contexto.alternativeUrl + "bolsas-e-financiamentos']")));
-		itemMenuNRA = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("a[href='" + contexto.alternativeUrl + "nra']")));
-		itemMenuDCE = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("a[href='" + contexto.alternativeUrl + "dce']")));
-		itemMenuGuiaDeFormaturas = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("a[href='" + contexto.alternativeUrl + "guia-de-formaturas']")));
+		itemMenuRematricula = contexto.wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("a[href='" + contexto.alternativeUrl + "rematricula']")));
+		itemMenuCalendarioAcademico = contexto.wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("a[href='" + contexto.alternativeUrl + "calendario']")));
+		itemMenuAvaliacaoInstitucional = contexto.wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("a[href='" + contexto.alternativeUrl + "avaliacao-institucional']")));		
+		itemMenuEnade = contexto.wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("a[href='" + contexto.alternativeUrl + "enade']")));
+		itemMenuBolsaEFinanciamentos = contexto.wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("a[href='" + contexto.alternativeUrl + "bolsas-e-financiamentos']")));
+		itemMenuNRA = contexto.wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("a[href='" + contexto.alternativeUrl + "nra']")));
+		itemMenuDCE = contexto.wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("a[href='" + contexto.alternativeUrl + "dce']")));
+		itemMenuGuiaDeFormaturas = contexto.wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("a[href='" + contexto.alternativeUrl + "guia-de-formaturas']")));
 	}
 
 	public static void clicarRematricula() {
@@ -100,7 +94,7 @@ public class MenuNavegacaoAluno {
 	}	
 	
 	private static void mapearRetornoClick() {
-		tituloPagina = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("body > div.row.row-title > div > div > h1")));
+		tituloPagina = contexto.wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("body > div.row.row-title > div > div > h1")));
 	}
 
 	private static String tituloPagina() {
