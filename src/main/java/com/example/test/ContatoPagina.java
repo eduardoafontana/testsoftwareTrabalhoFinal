@@ -26,8 +26,6 @@ public class ContatoPagina {
 		contexto = pContext;
 
 		contexto.driver.get(contexto.baseUrl + "fale-conosco");
-
-		mapearElementos();
 	}
 
 	private static void mapearElementos() {
@@ -40,41 +38,33 @@ public class ContatoPagina {
 	
 	public static void enviarContato() {
 		botaoDeEnviarDoFormulario.click();
-
-		mapearElementosRetornoValidacaoErro();
 	}
 
-	private static void mapearElementosRetornoValidacaoErro() {
-		labelDeRetornoDeErroDoName = contexto.wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("label.error")));
-		labelDeRetornoDeErroDoEmail = contexto.wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//form[@id='SacAddForm']/div[5]/label")));
-		labelDeRetornoDeErroDoTelefone = contexto.wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//form[@id='SacAddForm']/div[6]/label")));
-		labelDeRetornoDeErroDoMensagem = contexto.wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//form[@id='SacAddForm']/div[7]/label")));
-	}
-
-	public static void validaRetornoErro() {
-		assertEquals("Informe o seu nome", ContatoPagina.getNameError());
-		assertEquals("Informe o seu e-mail", ContatoPagina.getEmailError());
-		assertEquals("Informe o seu telefone", ContatoPagina.getTelefoneError());
-		assertEquals("Informe o sua mensagem", ContatoPagina.getMensagemError());
-	}
-
-	private static String getNameError() {
-		return labelDeRetornoDeErroDoName.getText();
+	public static void limparCampos(){
+		mapearElementos();
+		
+		contexto.limparCampos(Arrays.asList(campoNome, campoEmail, campoTelefone, campoMensagem));
 	}
 	
-	private static String getEmailError() {
-		return labelDeRetornoDeErroDoEmail.getText();
+	private static void mapearElementosRetornoValidacaoErro() {
+		labelDeRetornoDeErroDoName = contexto.wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.form-group:nth-child(5) > label:nth-child(2)")));
+		labelDeRetornoDeErroDoEmail = contexto.wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.form-group:nth-child(6) > label:nth-child(2)")));
+		labelDeRetornoDeErroDoTelefone = contexto.wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.form-group:nth-child(7) > label:nth-child(2)")));
+		labelDeRetornoDeErroDoMensagem = contexto.wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.form-group:nth-child(8) > label:nth-child(2)")));
 	}
 
-	private static String getTelefoneError() {
-		return labelDeRetornoDeErroDoTelefone.getText();
-	}
-
-	private static String getMensagemError() {
-		return labelDeRetornoDeErroDoMensagem.getText();
+	public static void validaRetornoErroEmBranco() {
+		mapearElementosRetornoValidacaoErro();
+		
+		assertEquals("Informe o seu nome", labelDeRetornoDeErroDoName.getText());
+		assertEquals("Informe o seu e-mail", labelDeRetornoDeErroDoEmail.getText());
+		assertEquals("Informe o seu telefone", labelDeRetornoDeErroDoTelefone.getText());
+		assertEquals("Informe o sua mensagem", labelDeRetornoDeErroDoMensagem.getText());
 	}
 
 	public static void preencherCamposFormulario() {
+		mapearElementos();
+		
 		contexto.limparCampos(Arrays.asList(campoNome, campoEmail, campoTelefone, campoMensagem));
 		
 		campoNome.sendKeys("Andre");
@@ -83,21 +73,19 @@ public class ContatoPagina {
 		campoMensagem.sendKeys("Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
 	}
 	
-	public static void enviarContatoPreenchido() {
-		contexto.driver.findElement(By.id("SacAddForm")).submit();
-		
-		mapearElementosRetornoValidacaoSucesso();
-	}
-
-	private static void mapearElementosRetornoValidacaoSucesso() {
+	private static void mapearMensagemRetorno(){
 		labelDeMensagemDeSucesso = contexto.wait.until(ExpectedConditions.presenceOfElementLocated(By.id("flashMessage")));
 	}
 	
 	public static void validaRetornoSucesso() {
+		mapearMensagemRetorno();
+		
 		assertEquals("Contato realizado com sucesso.", labelDeMensagemDeSucesso.getText());
 	}
 
 	public static void preencherParcialmenteCamposFormulario() {
+		mapearElementos();
+		
 		contexto.limparCampos(Arrays.asList(campoNome, campoEmail, campoTelefone, campoMensagem));
 				
 		campoNome.sendKeys("as");		
@@ -107,6 +95,8 @@ public class ContatoPagina {
 	}
 	
 	public static void validaRetornoErroParcial() {
+		mapearMensagemRetorno();
+		
  		assertEquals("O contato não pode ser salvo. Tente novamente.", labelDeMensagemDeSucesso.getText());
 	}
 }

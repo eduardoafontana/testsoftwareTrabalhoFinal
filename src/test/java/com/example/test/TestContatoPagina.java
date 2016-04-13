@@ -10,29 +10,28 @@ public class TestContatoPagina {
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		uniritterContexto = new UniritterContexto(new FirefoxDriver());
+		ContatoPagina.irPara(uniritterContexto);
 	}
 
 	@Test
-	public void testUniritterContatoValidacaoError() throws Exception {
-		ContatoPagina.irPara(uniritterContexto);
+	public void testUniritterContatoValidacaoEmBranco() throws Exception {
+		ContatoPagina.limparCampos();
 		ContatoPagina.enviarContato();
-		ContatoPagina.validaRetornoErro();
-	}
-
-	@Test
-	public void testUniritterContatoValidacaoSucesso() throws Exception {
-		ContatoPagina.irPara(uniritterContexto);
-		ContatoPagina.preencherCamposFormulario();
-		ContatoPagina.enviarContatoPreenchido();
-		ContatoPagina.validaRetornoSucesso();
+		ContatoPagina.validaRetornoErroEmBranco();
 	}
 
 	@Test
 	public void testUniritterContatoValidacaoParcial() throws Exception {
-		ContatoPagina.irPara(uniritterContexto);
 		ContatoPagina.preencherParcialmenteCamposFormulario();
-		ContatoPagina.enviarContatoPreenchido();
+		ContatoPagina.enviarContato();
 		ContatoPagina.validaRetornoErroParcial();
+	}
+
+	@Test
+	public void testUniritterContatoValidacaoSucesso() throws Exception {
+		ContatoPagina.preencherCamposFormulario();
+		ContatoPagina.enviarContato();
+		ContatoPagina.validaRetornoSucesso();
 	}	
 	
 	@AfterClass
