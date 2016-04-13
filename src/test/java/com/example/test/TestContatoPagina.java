@@ -5,10 +5,10 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class TestContatoPagina {
 
-	public UniritterContexto uniritterContexto;
+	public static UniritterContexto uniritterContexto;
 
-	@Before
-	public void setUp() throws Exception {
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
 		uniritterContexto = new UniritterContexto(new FirefoxDriver());
 	}
 
@@ -35,8 +35,8 @@ public class TestContatoPagina {
 		ContatoPagina.validaRetornoErroParcial();
 	}	
 	
-	@After
-	public void tearDown() throws Exception {
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
 		uniritterContexto.quit();
 	}
 }
