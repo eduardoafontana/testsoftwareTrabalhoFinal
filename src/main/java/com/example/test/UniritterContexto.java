@@ -15,12 +15,14 @@ public class UniritterContexto {
 	public WebDriver driver;
 	public String baseUrl;
 	public String alternativeUrl;
+	public String loginUrl;
 	public WebDriverWait wait;
 
 	public UniritterContexto(FirefoxDriver driver) {
 	    this.driver = driver;
 	    baseUrl = "http://www.uniritter.com.br/";
 	    alternativeUrl = "http://www.uniritter.edu.br/";
+	    loginUrl = "https://academicos.uniritter.edu.br/";
 	    
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().setPosition(new Point(0, 0));
