@@ -8,7 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class LoginAluno {
+public class LoginProfessor {
 
 	private static UniritterContexto contexto = null;
 	private static WebElement labelDeRetornoDeErro;
@@ -19,7 +19,7 @@ public class LoginAluno {
 	public static void irPara(UniritterContexto pContext) {
 		contexto = pContext;
 
-		contexto.driver.get(contexto.loginAlunoUrl);
+		contexto.driver.get(contexto.loginProfessorUrl);
 	}
 
 	private static void mapearElementos() {
@@ -33,7 +33,7 @@ public class LoginAluno {
 	}
 	
 	private static void mapearElementosRetornoValidacaoErro() {
-		labelDeRetornoDeErro = contexto.wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".rd_msg_text")));
+		labelDeRetornoDeErro = contexto.wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#dialog-message span")));
 	}
 
 	public static void validaRetornoErroLoginInvalido() {

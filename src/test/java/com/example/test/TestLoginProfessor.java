@@ -3,21 +3,21 @@ package com.example.test;
 import org.junit.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class TestLoginAluno {
+public class TestLoginProfessor {
 
 	public static UniritterContexto uniritterContexto;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		uniritterContexto = new UniritterContexto(new FirefoxDriver());
-		LoginAluno.irPara(uniritterContexto);
+		LoginProfessor.irPara(uniritterContexto);
 	}
 
 	@Test
-	public void testUniritterLoginAlunoInvalido() throws Exception {
-		LoginAluno.preencherCamposFormulario();
-		LoginAluno.efetuarLogin();
-		LoginAluno.validaRetornoErroLoginInvalido();
+	public void testUniritterLoginProfessorInvalido() throws Exception {
+		LoginProfessor.preencherCamposFormulario();
+		LoginProfessor.efetuarLogin();
+		LoginProfessor.validaRetornoErroLoginInvalido();
 	}
 	
 	@AfterClass
