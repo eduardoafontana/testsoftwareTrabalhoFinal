@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="8" failures="0" name="com.example.test.TestMenuNavegacaoAluno" time="18.59" errors="0" skipped="0">
+<testsuite tests="2" failures="0" name="com.example.test.TestLoginAlunoProfessor" time="6.734" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jre1.8.0_31\bin"/>
@@ -61,12 +61,6 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="com.example.test.TestMenuNavegacaoAluno" name="testeUniritterMenuNavegacaoAlunoRematricula" time="3.225"/>
-  <testcase classname="com.example.test.TestMenuNavegacaoAluno" name="testeUniritterMenuNavegacaoAlunoAvaliacaoInstitucional" time="2.121"/>
-  <testcase classname="com.example.test.TestMenuNavegacaoAluno" name="testeUniritterMenuNavegacaoAlunoEnade" time="2.128"/>
-  <testcase classname="com.example.test.TestMenuNavegacaoAluno" name="testeUniritterMenuNavegacaoAlunoCalendarioAcademico" time="1.894"/>
-  <testcase classname="com.example.test.TestMenuNavegacaoAluno" name="testeUniritterMenuNavegacaoAlunoBolsaEFinanciamentos" time="1.627"/>
-  <testcase classname="com.example.test.TestMenuNavegacaoAluno" name="testeUniritterMenuNavegacaoAlunoDCE" time="2.15"/>
-  <testcase classname="com.example.test.TestMenuNavegacaoAluno" name="testeUniritterMenuNavegacaoAlunoNRA" time="3.633"/>
-  <testcase classname="com.example.test.TestMenuNavegacaoAluno" name="testeUniritterMenuNavegacaoAlunoGuiaDeFormaturas" time="1.812"/>
+  <testcase classname="com.example.test.TestLoginAlunoProfessor" name="testUniritterLoginProfessorInvalido" time="3.407"/>
+  <testcase classname="com.example.test.TestLoginAlunoProfessor" name="testUniritterLoginAlunoInvalido" time="3.327"/>
 </testsuite>
