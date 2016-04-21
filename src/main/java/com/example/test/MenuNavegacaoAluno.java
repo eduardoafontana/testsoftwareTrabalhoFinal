@@ -55,7 +55,8 @@ public class MenuNavegacaoAluno {
 	}	
 	
 	private static void mapearRetornoClick() {
-		tituloPagina = contexto.wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("body > div.row.row-title > div > div > h1")));
+		tituloPagina = contexto.wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.container h1")));
+		
 	}
 
 	private static String tituloPagina() {

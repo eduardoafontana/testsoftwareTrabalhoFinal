@@ -47,7 +47,7 @@ public class Login {
 		
 		contexto.limparCampos(Arrays.asList(campoUsuario, campoSenha));
 		
-		campoUsuario.sendKeys("alu201530349");
+		campoUsuario.sendKeys("alu2015");
 		campoSenha.sendKeys("swordfish");
 	}
 }

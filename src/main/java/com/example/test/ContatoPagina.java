@@ -63,9 +63,7 @@ public class ContatoPagina {
 	}
 
 	public static void preencherCamposFormulario() {
-		mapearElementos();
-		
-		contexto.limparCampos(Arrays.asList(campoNome, campoEmail, campoTelefone, campoMensagem));
+		limparCampos();
 		
 		campoNome.sendKeys("Andre");
 		campoEmail.sendKeys("andrefj@gmail.com");
@@ -84,9 +82,7 @@ public class ContatoPagina {
 	}
 
 	public static void preencherParcialmenteCamposFormulario() {
-		mapearElementos();
-		
-		contexto.limparCampos(Arrays.asList(campoNome, campoEmail, campoTelefone, campoMensagem));
+		limparCampos();
 				
 		campoNome.sendKeys("as");		
 		campoEmail.sendKeys("ss@com.br");		
