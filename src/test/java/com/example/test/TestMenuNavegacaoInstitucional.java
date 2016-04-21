@@ -11,7 +11,7 @@ public class TestMenuNavegacaoInstitucional {
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		uniritterContexto = new UniritterContexto(new FirefoxDriver());
-		MenuNavegacaoInstitucional.iniciar(uniritterContexto);
+		MenuNavegacao.iniciar(uniritterContexto);
 	}
 	
 	@Test

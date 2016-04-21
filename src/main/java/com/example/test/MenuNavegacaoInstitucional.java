@@ -2,95 +2,68 @@ package com.example.test;
 
 import static org.junit.Assert.assertEquals;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-
 public class MenuNavegacaoInstitucional {
-
-	private static UniritterContexto contexto = null;
-	private static WebElement tituloPagina;
-
-	public static void iniciar(UniritterContexto pContext) {
-		contexto = pContext;
-
-		contexto.driver.get(contexto.baseUrl);
-	}
-
-	private static void clicar(String itemDoMenu) {
-		WebElement elemento = contexto.wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("a[href='" + contexto.alternativeUrl + itemDoMenu +"']")));
-		elemento.click();
-	}	
 	
 	public static void clicarOCentroUniversitario() {
-		clicar("o-centro-universitario");
+		MenuNavegacao.clicar("o-centro-universitario");
 	}	
 	
 	public static void clicarReitoria() {
-		clicar("reitoria");
+		MenuNavegacao.clicar("reitoria");
 	}
 	
 	public static void clicarPrograd() {
-		clicar("prograd");
+		MenuNavegacao.clicar("prograd");
 	}
 	
 	public static void clicarPropex() {
-		clicar("propex");
+		MenuNavegacao.clicar("propex");
 	}
 	
 	public static void clicarRedeLaureate() {
-		clicar("rede-laureate");
+		MenuNavegacao.clicar("rede-laureate");
 	}
 	
 	public static void clicarNossosCampi() {
-		clicar("nossos-campi");
+		MenuNavegacao.clicar("nossos-campi");
 	}
 
 	public static void clicarEditora() {
-		clicar("editora");
-	}
-	
-	private static void mapearRetornoClick() {
-		tituloPagina = contexto.wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.container h1")));
-		
-	}
-
-	private static String tituloPagina() {
-		return tituloPagina.getText();
+		MenuNavegacao.clicar("editora");
 	}
 
 	public static void estaEmOCentroUniversitario() {
-		mapearRetornoClick();
-		assertEquals("O CENTRO UNIVERSITÁRIO", MenuNavegacaoInstitucional.tituloPagina());
+		MenuNavegacao.mapearRetornoClick();
+		assertEquals("O CENTRO UNIVERSITÁRIO", MenuNavegacao.tituloPagina());
 	}
 	
 	public static void estaEmReitoria() {
-		mapearRetornoClick();
-		assertEquals("REITORIA", MenuNavegacaoInstitucional.tituloPagina());
+		MenuNavegacao.mapearRetornoClick();
+		assertEquals("REITORIA", MenuNavegacao.tituloPagina());
 	}
 	
 	public static void estaEmPrograd() {
-		mapearRetornoClick();
-		assertEquals("PROGRAD", MenuNavegacaoInstitucional.tituloPagina());
+		MenuNavegacao.mapearRetornoClick();
+		assertEquals("PROGRAD", MenuNavegacao.tituloPagina());
 	}
 	
 	public static void estaEmPropex() {
-		mapearRetornoClick();
-		assertEquals("PROPEX", MenuNavegacaoInstitucional.tituloPagina());
+		MenuNavegacao.mapearRetornoClick();
+		assertEquals("PROPEX", MenuNavegacao.tituloPagina());
 	}
 	
 	public static void estaEmRedeLaureate() {
-		mapearRetornoClick();
-		assertEquals("REDE LAUREATE", MenuNavegacaoInstitucional.tituloPagina());
+		MenuNavegacao.mapearRetornoClick();
+		assertEquals("REDE LAUREATE", MenuNavegacao.tituloPagina());
 	}
 
 	public static void estaEmNossosCampi() {
-		mapearRetornoClick();
-		assertEquals("NOSSOS CAMPI", MenuNavegacaoInstitucional.tituloPagina());
+		MenuNavegacao.mapearRetornoClick();
+		assertEquals("NOSSOS CAMPI", MenuNavegacao.tituloPagina());
 	}	
 	
 	public static void estaEmEditora() {
-		mapearRetornoClick();
-		assertEquals("EDITORA", MenuNavegacaoInstitucional.tituloPagina());
+		MenuNavegacao.mapearRetornoClick();
+		assertEquals("EDITORA", MenuNavegacao.tituloPagina());
 	}
 }

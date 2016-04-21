@@ -2,104 +2,77 @@ package com.example.test;
 
 import static org.junit.Assert.assertEquals;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-
 public class MenuNavegacaoAluno {
 
-	private static UniritterContexto contexto = null;
-	private static WebElement tituloPagina;
-
-	public static void iniciar(UniritterContexto pContext) {
-		contexto = pContext;
-
-		contexto.driver.get(contexto.baseUrl);
-	}
-
-	private static void clicar(String itemDoMenu) {
-		WebElement elemento = contexto.wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("a[href='" + contexto.alternativeUrl + itemDoMenu +"']")));
-		elemento.click();
-	}
-
 	public static void clicarRematricula() {
-		clicar("rematricula");
+		MenuNavegacao.clicar("rematricula");
 	}	
 	
 	public static void clicarCalendarioAcademico() {
-		clicar("calendario");
+		MenuNavegacao.clicar("calendario");
 	}
 	
 	public static void clicarAvaliacaoInstitucional() {
-		clicar("avaliacao-institucional");
+		MenuNavegacao.clicar("avaliacao-institucional");
 	}
 	
 	public static void clicarEnade() {
-		clicar("enade");
+		MenuNavegacao.clicar("enade");
 	}
 	
 	public static void clicarBolsaEFinanciamentos() {
-		clicar("bolsas-e-financiamentos");
+		MenuNavegacao.clicar("bolsas-e-financiamentos");
 	}
 	
 	public static void clicarNRA() {
-		clicar("nra");
+		MenuNavegacao.clicar("nra");
 	}
 
 	public static void clicarDCE() {
-		clicar("dce");
+		MenuNavegacao.clicar("dce");
 	}
 	
 	public static void clicarGuiaDeFormaturas() {
-		clicar("guia-de-formaturas");
+		MenuNavegacao.clicar("guia-de-formaturas");
 	}	
-	
-	private static void mapearRetornoClick() {
-		tituloPagina = contexto.wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.container h1")));
-		
-	}
-
-	private static String tituloPagina() {
-		return tituloPagina.getText();
-	}
 
 	public static void estaEmRematricula() {
-		mapearRetornoClick();
-		assertEquals("REMATRÍCULA", MenuNavegacaoAluno.tituloPagina());
+		MenuNavegacao.mapearRetornoClick();
+		assertEquals("REMATRÍCULA", MenuNavegacao.tituloPagina());
 	}
 	
 	public static void estaEmCalendarioAcademico() {
-		mapearRetornoClick();
-		assertEquals("CALENDÁRIO ACADÊMICO", MenuNavegacaoAluno.tituloPagina());
+		MenuNavegacao.mapearRetornoClick();
+		assertEquals("CALENDÁRIO ACADÊMICO", MenuNavegacao.tituloPagina());
 	}
 	
 	public static void estaEmAvaliacaoInstitucional() {
-		mapearRetornoClick();
-		assertEquals("AVALIAÇÃO INSTITUCIONAL", MenuNavegacaoAluno.tituloPagina());
+		MenuNavegacao.mapearRetornoClick();
+		assertEquals("AVALIAÇÃO INSTITUCIONAL", MenuNavegacao.tituloPagina());
 	}
 	
 	public static void estaEmEnade() {
-		mapearRetornoClick();
-		assertEquals("ENADE", MenuNavegacaoAluno.tituloPagina());
+		MenuNavegacao.mapearRetornoClick();
+		assertEquals("ENADE", MenuNavegacao.tituloPagina());
 	}
 	
 	public static void estaEmBolsaEFinanciamentos() {
-		mapearRetornoClick();
-		assertEquals("BOLSAS E FINANCIAMENTOS", MenuNavegacaoAluno.tituloPagina());
+		MenuNavegacao.mapearRetornoClick();
+		assertEquals("BOLSAS E FINANCIAMENTOS", MenuNavegacao.tituloPagina());
 	}
 
 	public static void estaEmNRA() {
-		mapearRetornoClick();
-		assertEquals("NRA", MenuNavegacaoAluno.tituloPagina());
+		MenuNavegacao.mapearRetornoClick();
+		assertEquals("NRA", MenuNavegacao.tituloPagina());
 	}	
 	
 	public static void estaEmDCE() {
-		mapearRetornoClick();
-		assertEquals("DCE", MenuNavegacaoAluno.tituloPagina());
+		MenuNavegacao.mapearRetornoClick();
+		assertEquals("DCE", MenuNavegacao.tituloPagina());
 	}
 
 	public static void estaEmGuiaDeFormaturas() {
-		mapearRetornoClick();
-		assertEquals("GUIA DE FORMATURAS", MenuNavegacaoAluno.tituloPagina());
+		MenuNavegacao.mapearRetornoClick();
+		assertEquals("GUIA DE FORMATURAS", MenuNavegacao.tituloPagina());
 	}
 }
